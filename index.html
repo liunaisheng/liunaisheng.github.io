@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘乃生 - 安徽论坛网创始人</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#FF7D00',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .card-hover {
+                @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full bg-white/95 shadow-md:bg-transparent shadow-md:shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary">刘乃生</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary:primary transition-custom">关于我</a>
+                    <a href="#career" class="text-gray-700 hover:text-primary transition-custom">创业历程</a>
+                    <a href="#honors" class="text-gray-700 hover:text-primary transition-custom">荣誉奖项</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-custom">联系我</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:bg-primary/10 hover:text-primary rounded-md">关于我</a>
+                <a href="#career" class="block px-3 py-2 text-gray-700 hover:bg-primary/10 hover:text-primary rounded-md">创业历程</a>
+                <a href="#honors" class="block px-3 py-2 text-gray-700 hover:bg-primary/10 hover:text-primary rounded-md">荣誉奖项</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:bg-primary/10 hover:text-primary rounded-md">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="relative pt-28 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1048/1920/1080')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <img src="https://picsum.photos/id/1012/200/200" alt="刘乃生照片" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-white/30 object-cover shadow-lg">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-shadow">刘乃生</h1>
+                <p class="text-xl md:text-2xl opacity-90 mb-8">安徽论坛网创始人 & 首席执行官</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#about" class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition-custom inline-flex items-center">
+                        <i class="fa fa-user mr-2"></i> 了解更多
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-md font-medium transition-custom inline-flex items-center">
+                        <i class="fa fa-envelope mr-2"></i> 联系我
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </header>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">关于我</h2>
+                <div class="bg-white rounded-xl shadow-sm p-8 md:p-10">
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        我是刘乃生，安徽合肥人，安徽论坛网创始人兼首席执行官。深耕安徽本地互联网行业15年，始终致力于搭建连接安徽人的数字化交流平台，促进地方信息共享与经济发展。
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        2008年，我敏锐地察觉到地方社区论坛的发展潜力，毅然辞去稳定工作，创办了安徽论坛网。从最初的几人团队，到如今服务超过300万安徽网民的本地生活服务平台，我们始终坚持"立足安徽、服务安徽、宣传安徽"的宗旨。
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        除了专注于互联网创业，我还积极参与安徽本地公益事业，发起"皖企助农"计划，帮助超过200家农户拓展线上销售渠道。同时，我也是安徽省青年企业家协会理事，致力于推动安徽互联网产业的创新与发展。
+                    </p>
+                    
+                    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center p-4">
+                            <div class="text-3xl font-bold text-primary mb-1">15+</div>
+                            <div class="text-gray-600 text-sm">行业经验</div>
+                        </div>
+                        <div class="text-center p-4">
+                            <div class="text-3xl font-bold text-primary mb-1">300万+</div>
+                            <div class="text-gray-600 text-sm">平台用户</div>
+                        </div>
+                        <div class="text-center p-4">
+                            <div class="text-3xl font-bold text-primary mb-1">12</div>
+                            <div class="text-gray-600 text-sm">荣誉奖项</div>
+                        </div>
+                        <div class="text-center p-4">
+                            <div class="text-3xl font-bold text-primary mb-1">200+</div>
+                            <div class="text-gray-600 text-sm">帮扶农户</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 创业历程 -->
+    <section id="career" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">创业历程</h2>
+            
+            <div class="max-w-3xl mx-auto relative">
+                <!-- 时间线 -->
+                <div class="space-y-12">
+                    <!-- 2008年 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10">
+                            <i class="fa fa-rocket"></i>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
+                            <h3 class="text-xl font-bold text-primary mb-2">2008年</h3>
+                            <h4 class="text-lg font-semibold mb-3">安徽论坛网正式创立</h4>
+                            <p class="text-gray-700">在合肥一间不到20平米的办公室里，我与3位志同道合的伙伴共同创立了安徽论坛网，最初仅提供简单的本地资讯与社区交流功能。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2012年 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
+                            <h3 class="text-xl font-bold text-primary mb-2">2012年</h3>
+                            <h4 class="text-lg font-semibold mb-3">用户突破50万，获首轮融资</h4>
+                            <p class="text-gray-700">平台用户量突破50万，成为安徽省内最具影响力的地方社区之一，并获得本地创投机构500万元天使轮融资，团队扩展至20人。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2016年 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
+                            <h3 class="text-xl font-bold text-primary mb-2">2016年</h3>
+                            <h4 class="text-lg font-semibold mb-3">推出本地生活服务平台</h4>
+                            <p class="text-gray-700">在社区论坛基础上，拓展本地生活服务板块，涵盖吃喝玩乐、二手交易、求职招聘等功能，年度交易额突破1000万元。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2020年 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10">
+                            <i class="fa fa-mobile"></i>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
+                            <h3 class="text-xl font-bold text-primary mb-2">2020年</h3>
+                            <h4 class="text-lg font-semibold mb-3">移动端用户占比超过80%</h4>
+                            <p class="text-gray-700">完成平台全面移动端转型，推出独立APP，移动端用户占比超过80%，注册用户突破200万，成为安徽本地生活第一入口。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023年 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm card-hover">
+                            <h3 class="text-xl font-bold text-primary mb-2">2023年至今</h3>
+                            <h4 class="text-lg font-semibold mb-3">启动"数字安徽社区"计划</h4>
+                            <p class="text-gray-700">平台用户突破300万，启动"数字安徽社区"计划，结合AI技术提升用户体验，同时深化"皖企助农"项目，助力乡村振兴。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section id="honors" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">荣誉奖项</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- 奖项1 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1040/600/400" alt="安徽省十大杰出青年企业家" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">安徽省十大杰出青年企业家</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2023年</span>
+                        </div>
+                        <p class="text-gray-700">由安徽省青年企业家协会评选，表彰在互联网行业及地方经济发展中做出突出贡献的青年企业家。</p>
+                    </div>
+                </div>
+                
+                <!-- 奖项2 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1059/600/400" alt="安徽省互联网创新人物" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">安徽省互联网创新人物</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2021年</span>
+                        </div>
+                        <p class="text-gray-700">由安徽省网信办颁发，表彰在地方互联网平台创新发展及数字化转型中做出重要贡献的领军人物。</p>
+                    </div>
+                </div>
+                
+                <!-- 奖项3 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1058/600/400" alt="安徽省优秀民营企业家" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">安徽省优秀民营企业家</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2020年</span>
+                        </div>
+                        <p class="text-gray-700">由安徽省工商业联合会授予，表彰在促进地方就业、推动产业升级和履行社会责任方面表现突出的民营企业家。</p>
+                    </div>
+                </div>
+                
+                <!-- 奖项4 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1055/600/400" alt="乡村振兴贡献奖" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">乡村振兴贡献奖</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2019年</span>
+                        </div>
+                        <p class="text-gray-700">由安徽省农业农村厅颁发，表彰"皖企助农"计划在帮助农村地区拓宽销售渠道、增加农民收入方面的突出贡献。</p>
+                    </div>
+                </div>
+                
+                <!-- 奖项5 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1056/600/400" alt="合肥市优秀青年创业者" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">合肥市优秀青年创业者</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2017年</span>
+                        </div>
+                        <p class="text-gray-700">由合肥市团委和合肥市人社局联合颁发，表彰在本地创业创新领域具有示范引领作用的青年创业者。</p>
+                    </div>
+                </div>
+                
+                <!-- 奖项6 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1057/600/400" alt="安徽省最具影响力互联网平台" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-primary">安徽省最具影响力互联网平台</h3>
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">2016年</span>
+                        </div>
+                        <p class="text-gray-700">由安徽省互联网协会评选，安徽论坛网凭借用户规模和社会影响力获此殊荣，成为安徽省内标杆性地方社区平台。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">联系我</h2>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-2 bg-gray-50 rounded-xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">邮箱</h4>
+                                    <p class="text-gray-700">liunaisheng@anhuibbs.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">电话</h4>
+                                    <p class="text-gray-700">0551-6288xxxx</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">办公地址</h4>
+                                    <p class="text-gray-700">安徽省合肥市蜀山区科技园A座15层</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="text-lg font-medium text-gray-900 mb-4">关注我</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-custom">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-3 bg-gray-50 rounded-xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6">发送消息</h3>
+                        
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="您的姓名">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="您的邮箱">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">主题</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="消息主题">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">消息内容</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="请输入您的消息内容..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-custom">
+                                <i class="fa fa-paper-plane mr-2"></i> 发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-bold mb-4">刘乃生</h3>
+                        <p class="text-gray-400 mb-4 max-w-md">安徽论坛网创始人，致力于通过互联网技术促进安徽本地信息交流与经济发展，推动数字安徽建设。</p>
+                        <p class="text-gray-500">© 2023 刘乃生个人网站. 保留所有权利.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-custom">关于我</a></li>
+                            <li><a href="#career" class="text-gray-400 hover:text-white transition-custom">创业历程</a></li>
+                            <li><a href="#honors" class="text-gray-400 hover:text-white transition-custom">荣誉奖项</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom">联系我</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">相关网站</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-custom">安徽论坛网</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-custom">皖企助农平台</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-custom">安徽省青年企业家协会</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-custom">数字安徽建设官网</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'bg-white');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white');
+                navbar.classList.add('bg-white/95');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单（如果打开）
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
